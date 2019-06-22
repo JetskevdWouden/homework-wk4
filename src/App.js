@@ -2,13 +2,14 @@ import React from 'react';
 import './App.css';
 import { connect } from 'react-redux'
 import { clickHandler } from './actions/Click'
+import Render from './components/Render'
 
 class App extends React.Component {
   state = {
     value: {
       name: "default",
       manufacturer: "default",
-      year: 0,
+      year: undefined,
       origin: "default"
     },
     data: [
@@ -78,6 +79,7 @@ class App extends React.Component {
             <br />
             <button onClick={() => this.props.clickHandler(this.state.value)}>ADD</button>
           </div>
+              <Render arrayOfModels={this.props.arrayOfModels} />
         </main>
       </div>
     );
@@ -86,6 +88,10 @@ class App extends React.Component {
 
 const mapStateToProps = (reduxState) => {
   console.log("IM THE REDUX STATE",reduxState)
+  console.log("IM THE REDUX STATE . VALUE", reduxState.value)
+  return {
+    arrayOfModels: reduxState.value
+  }
 }
 
 export default connect(mapStateToProps, { clickHandler })(App)
