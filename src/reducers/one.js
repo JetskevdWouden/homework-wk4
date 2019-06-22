@@ -1,6 +1,4 @@
-import {SELECTED_DATA} from '../actions/Click'
-
-//adds the selected data to the state
+import { SELECTED_DATA } from '../actions/Click'
 
 export default (initialState = [], action = {}) => {
     switch (action.type) {

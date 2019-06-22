@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { connect } from 'react-redux'
 import { clickHandler } from './actions/Click'
-import Render from './components/Render'
+import ModelDetails from './components/ModelDetails'
 
 class App extends React.Component {
   state = {
@@ -41,7 +41,6 @@ class App extends React.Component {
   }
 
   updateSelection(event) {
-    console.log("EVENT", event.target.value)
     this.state.data.find((element) => {
       if (element.name === event.target.value) {
         return (
@@ -56,7 +55,6 @@ class App extends React.Component {
   updateSelection = this.updateSelection.bind(this)
 
   render() {
-    console.log("MY LOCAL STATE VALUE IS:", this.state.value)
     return (
       <div className="App">
         <header className="App-header">
@@ -79,7 +77,7 @@ class App extends React.Component {
             <br />
             <button onClick={() => this.props.clickHandler(this.state.value)}>ADD</button>
           </div>
-              <Render arrayOfModels={this.props.arrayOfModels} />
+          <ModelDetails arrayOfModels={this.props.arrayOfModels} />
         </main>
       </div>
     );
@@ -87,8 +85,6 @@ class App extends React.Component {
 }
 
 const mapStateToProps = (reduxState) => {
-  console.log("IM THE REDUX STATE",reduxState)
-  console.log("IM THE REDUX STATE . VALUE", reduxState.value)
   return {
     arrayOfModels: reduxState.value
   }

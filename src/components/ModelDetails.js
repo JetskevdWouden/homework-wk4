@@ -4,20 +4,18 @@ function renderList(model) {
     return (
         <li key={model.name}>
             Name: {model.name}
-            <br/>
+            <br />
             Manufacturer: {model.manufacturer}
-            <br/>
+            <br />
             Year: {model.year}
-            <br/>
+            <br />
             Origin: {model.origin}
-            <br/>
+            <br />
         </li>
     )
 }
 
-export default function Render(props) {
-    console.log("THESE ARE MY PROPS", props)
-    console.log("THESE ARE MY PROPS.ARRAYOFMODELS", props.arrayOfModels)
+export default function ModelDetails(props) {
     return (
         <div className="listOfModels">
             <h3>Your Choices:</h3>
