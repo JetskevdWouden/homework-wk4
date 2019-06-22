@@ -54,10 +54,6 @@ class App extends React.Component {
 
   updateSelection = this.updateSelection.bind(this)
 
-  // componentDidMount() {
-  //   this.props.clickHandler()
-  // }
-
   render() {
     console.log("MY LOCAL STATE VALUE IS:", this.state.value)
     return (
