@@ -3,11 +3,10 @@ import './App.css';
 import { Provider } from 'react-redux'
 import store from './store'
 
-
 class App extends React.Component {
-
-  render() {
-    const data = [
+  state = {
+    value: " ",
+    data: [
       {
         name: "Ivel Z3",
         manufacturer: "Ivasim",
@@ -33,6 +32,17 @@ class App extends React.Component {
         origin: "USA"
       }
     ]
+  }
+
+  updateSelection(event) {
+    this.setState({
+      value: event.target.value
+    })
+  }
+
+  updateSelection = this.updateSelection.bind(this)
+
+  render() {
 
     return (
       <Provider store={store}>
@@ -43,14 +53,13 @@ class App extends React.Component {
           <main>
             <div className="computerModel">
               <h2>Choose a computer model</h2>
-              {console.log("THIS DATA", data[0].name)}
-              <select>
+              <select value={this.state.value} onChange={this.updateSelection}>
                 <option value="">
                   --pick a model--
                 </option>
                 {
-                  data.map((element) => {
-                    return <option value={element.name}>{element.name} ({element.year})</option>
+                  this.state.data.map((element) => {
+                    return <option key={element.name} value={element.name} onClick={this.try}>{element.name} ({element.year})</option>
                   })
                 }
               </select>
