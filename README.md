@@ -1,3 +1,17 @@
+## Homework week 4
+
+Found it do-able.
+Was stuck on step 3 for quite a while because I wasn't able to dispatch my action. but then found out that its a prop of the component if you use connect and --> this.props.theAction.
+Do feel alot more confident about my understansing of React and Redux now. Im not feeling as stupid compared to last week :).
+Spent about 6:30 hours on it
+Toughness: 6.5/10
+
+
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
